@@ -1,6 +1,6 @@
 #include<stdio.h> 
-#include<conio.h> 
-#include<process.h> 
+#include<stdlib.h>
+
 struct node 
 { 
 int data; 
@@ -72,7 +72,8 @@ t=(struct node*)malloc(sizeof(struct node));
 printf("Enter data:"); 
 scanf("%d",&num);
 t->data=num; 
-if(start==NULL) //If list is empty { 
+if(start==NULL) //If list is empty 
+{ 
 t->next=NULL; 
 start=t; 
 } 
@@ -89,7 +90,8 @@ t=(struct node*)malloc(sizeof(struct node)); printf("Enter data:");
 scanf("%d",&num); 
 t->data=num; 
 t->next=NULL; 
-if(start==NULL) //If list is empty { 
+if(start==NULL) //If list is empty 
+{ 
 start=t; 
 } 
 else 
@@ -113,7 +115,7 @@ scanf("%d",&num);
 printf("Enter position to insert:"); 
 scanf("%d",&pos); 
 t->data=num;
-q=start; ss
+q=start; 
 for(i=1;i<pos-1;i++) 
 { 
 if(q->next==NULL) 
@@ -191,6 +193,7 @@ q=q->next;
 } 
 t=q->next; 
 q->next=t->next; 
-printf("Deleted element is %d",t->data); free(t); 
+printf("Deleted element is %d",t->data);
+free(t); 
 return 0;
-
+}

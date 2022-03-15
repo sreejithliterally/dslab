@@ -1,11 +1,12 @@
 #include <stdio.h>
-#define Max 5
+#include<stdlib.h> 
+#define max 5
 
 void insert();
 void delete();
 void display();
 
-int Queue_array[MAX];
+int Queue_array[max];
 int rear=-1;
 int front=-1;
 int main()
@@ -23,7 +24,7 @@ switch(choice)
 {
 	case 1:
 		insert();
-		breaj;
+		break;
 	case 2:
 		delete();
 		break;
@@ -31,7 +32,8 @@ switch(choice)
 		display();
 		break;
 	case 4:
-		exit(1);
+		exit(0);
+		break;
 	default:
 		printf("Wrong choice\n");
 		}
@@ -42,8 +44,8 @@ void insert()
 {
 
 int add_item;
-if(rear==MAX-1)
-	print("Queue overflow\n");
+if(rear==max-1)
+	printf("Queue overflow\n");
 else {
 	if(front==-1)
 	front = 0;
@@ -81,7 +83,7 @@ if(front==-1)
 	printf("Queue is empty\n");
 else{
 	printf("queue is : \n");
-	for(i=front;i,=rear;i++);
+	for(i=front;i<=rear;i++);
 		printf("%d",Queue_array[i]);
 		printf("\n");
 }
