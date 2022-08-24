@@ -28,3 +28,28 @@ int main()
                 pageFaults--;
             }
         }
+ pageFaults++;
+        
+        if((pageFaults <= frames) && (s == 0))
+        {
+            temp[m] = incomingStream[m];
+        }
+        else if(s == 0)
+        {
+            temp[(pageFaults - 1) % frames] = incomingStream[m];
+        }
+      
+        printf("\n");
+        printf("%d\t\t\t",incomingStream[m]);
+        for(n = 0; n < frames; n++)
+        {
+            if(temp[n] != -1)
+                printf(" %d\t\t\t", temp[n]);
+            else
+                printf(" - \t\t\t");
+        }
+    }
+
+    printf("\nTotal Page Faults:\t%d\n", pageFaults);
+    return 0;
+}
